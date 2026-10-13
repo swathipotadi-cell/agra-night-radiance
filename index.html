@@ -29,7 +29,7 @@
   </div>
 </header>
 <nav class="nav" aria-label="Main navigation"><div class="nav-inner">
-  <a href="#overview">Overview</a><a href="#annual-maps">Annual maps</a><a href="#spatial">Spatial trends</a><a href="#animation">Animation</a><a href="#annual-data">Annual data</a><a href="#methodology">Methodology</a><a href="#findings">Findings &amp; limits</a>
+  <a href="#overview">Overview</a><a href="#annual-maps">Annual maps</a><a href="#spatial">Spatial trends</a><a href="#animation">Animation</a><a href="#graphs">Graphs</a><a href="#annual-data">Annual data</a><a href="#methodology">Methodology</a><a href="#findings">Findings &amp; limits</a>
 </div></nav>
 <main class="container">
   <section class="panel" id="overview">
@@ -64,8 +64,27 @@
     <figure class="visualcard"><img src="Agra_VIIRS_Radiance_2014_2024.gif" alt="Animated sequence of Agra VIIRS night-time radiance from 2014 to 2024" loading="lazy"><figcaption>Animated annual VIIRS night-time radiance maps, 2014–2024.</figcaption></figure>
   </section>
 
+  <section class="panel" id="graphs">
+    <div class="kicker">05 / Interactive graphs</div>
+    <h2>Annual mean radiance trends</h2>
+    <p class="lead">Explore annual mean VIIRS night-time radiance across the Agra study area from 2014 to 2024. Hover over the graph to inspect values.</p>
+    <div class="grid-2">
+      <figure class="visualcard" style="padding:18px;">
+        <h3 style="margin:0 0 12px;">Line graph — change over time</h3>
+        <canvas id="radianceLineChart" role="img" aria-label="Line graph of annual mean VIIRS radiance from 2014 to 2024"></canvas>
+        <figcaption>Annual mean radiance (nW/cm²/sr).</figcaption>
+      </figure>
+      <figure class="visualcard" style="padding:18px;">
+        <h3 style="margin:0 0 12px;">Bar graph — yearly comparison</h3>
+        <canvas id="radianceBarChart" role="img" aria-label="Bar graph comparing annual mean VIIRS radiance from 2014 to 2024"></canvas>
+        <figcaption>Comparison of annual spatial mean radiance values.</figcaption>
+      </figure>
+    </div>
+    <p class="small">Source: annual mean radiance statistics shown in the table below. Charts require an internet connection to load Chart.js.</p>
+  </section>
+
   <section class="panel" id="annual-data">
-    <div class="kicker">05 / Annual data</div>
+    <div class="kicker">06 / Annual data</div>
     <h2>Annual mean radiance statistics</h2>
     <p class="lead">Annual spatial mean radiance values for the study period, in nW/cm²/sr.</p>
     <div class="table-wrap"><table><thead><tr><th>Year</th><th>Annual mean radiance (nW/cm²/sr)</th></tr></thead><tbody>
@@ -76,7 +95,7 @@
   </section>
 
   <section class="panel" id="methodology">
-    <div class="kicker">06 / Methodology</div>
+    <div class="kicker">07 / Methodology</div>
     <h2>Data and processing workflow</h2>
     <ol class="bullets">
       <li><strong>Satellite dataset:</strong> NOAA VIIRS DNB monthly night-time lights collection, <code>NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG</code>.</li>
@@ -89,7 +108,7 @@
   </section>
 
   <section class="panel" id="findings">
-    <div class="kicker">07 / Findings &amp; limitations</div>
+    <div class="kicker">08 / Findings &amp; limitations</div>
     <h2>Interpretation and caveats</h2>
     <h3>Key findings</h3>
     <ul class="bullets">
@@ -109,5 +128,32 @@
   <p class="small"><a href="#top">↑ Back to top</a></p>
 </main>
 <footer class="footer">HS524M · Urban Informatics &amp; Spatial Analytics · Agra VIIRS night-time radiance study, 2014–2024.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+(() => {
+  const years = ['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024'];
+  const radiance = [24.737910,24.965490,22.895297,23.483370,21.738757,20.644503,20.737805,22.237782,21.236421,23.211848,24.450545];
+  const commonOptions = {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: (context) => `Mean radiance: ${context.parsed.y.toFixed(3)} nW/cm²/sr` } } },
+    scales: {
+      x: { title: { display: true, text: 'Year' }, grid: { display: false } },
+      y: { beginAtZero: false, title: { display: true, text: 'Mean radiance (nW/cm²/sr)' } }
+    }
+  };
+  function drawCharts() {
+    if (typeof Chart === 'undefined') return;
+    const lineCanvas = document.getElementById('radianceLineChart');
+    const barCanvas = document.getElementById('radianceBarChart');
+    if (!lineCanvas || !barCanvas) return;
+    new Chart(lineCanvas, { type: 'line', data: { labels: years, datasets: [{ label: 'Annual mean radiance', data: radiance, borderColor: '#087d83', backgroundColor: 'rgba(8,125,131,0.13)', pointBackgroundColor: '#245b9b', pointRadius: 4, pointHoverRadius: 6, borderWidth: 3, tension: 0.25, fill: true }] }, options: commonOptions });
+    new Chart(barCanvas, { type: 'bar', data: { labels: years, datasets: [{ label: 'Annual mean radiance', data: radiance, backgroundColor: '#3b75c9', borderRadius: 5 }] }, options: commonOptions });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', drawCharts); else drawCharts();
+})();
+</script>
+
 </body>
 </html>
