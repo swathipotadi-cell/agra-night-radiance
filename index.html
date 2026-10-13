@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,110 +7,65 @@
 <title>Agra Night-time Radiance Analysis | 2014–2024</title>
 <style>
 :root {
-  --navy: #142b4a;
-  --blue: #2563a6;
-  --pale: #edf4fb;
-  --text: #263445;
-  --muted: #617186;
+  --navy:#142b4a; --blue:#2563a6; --pale:#edf4fb;
+  --text:#263445; --muted:#617186;
 }
-* { box-sizing: border-box; }
+* { box-sizing:border-box; }
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  line-height: 1.65;
-  background: #f5f7fa;
+  margin:0; font-family:Arial,Helvetica,sans-serif;
+  color:var(--text); line-height:1.65; background:#f5f7fa;
 }
 header {
-  background: linear-gradient(120deg, #142b4a, #2768a7);
-  color: white;
-  padding: 58px 8%;
+  background:linear-gradient(120deg,#142b4a,#2768a7);
+  color:white; padding:55px 8%;
 }
 header .tag {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #c7def9;
+  text-transform:uppercase; letter-spacing:2px;
+  font-size:12px; font-weight:bold; color:#c7def9;
 }
-header h1 {
-  font-size: clamp(30px, 5vw, 48px);
-  line-height: 1.15;
-  margin: 15px 0;
-}
-header p { max-width: 760px; color: #e5edf8; }
+header h1 { font-size:clamp(30px,5vw,48px); line-height:1.15; }
+header p { max-width:760px; color:#e5edf8; }
 nav {
-  background: white;
-  padding: 12px 8%;
-  border-bottom: 1px solid #dce4ed;
-  position: sticky;
-  top: 0;
-  z-index: 2;
+  background:white; padding:12px 8%; border-bottom:1px solid #dce4ed;
+  position:sticky; top:0; z-index:2;
 }
 nav a {
-  color: var(--navy);
-  text-decoration: none;
-  font-weight: bold;
-  margin-right: 22px;
-  font-size: 14px;
+  color:var(--navy); text-decoration:none; font-weight:bold;
+  margin-right:22px; font-size:14px;
 }
-main { max-width: 1100px; margin: auto; padding: 28px 20px 60px; }
+main { max-width:1100px; margin:auto; padding:28px 20px 60px; }
 section {
-  background: white;
-  margin: 22px 0;
-  padding: 28px;
-  border: 1px solid #e0e7ef;
-  border-radius: 12px;
+  background:white; margin:22px 0; padding:28px;
+  border:1px solid #e0e7ef; border-radius:12px;
 }
-h2 { color: var(--navy); margin-top: 0; }
-h3 { color: var(--blue); }
+h2 { color:var(--navy); margin-top:0; }
+h3 { color:var(--blue); }
 .metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 14px;
-  margin: 20px 0;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:14px; margin:20px 0;
 }
 .metric {
-  padding: 20px;
-  background: var(--pale);
-  border-radius: 9px;
-  border-left: 4px solid var(--blue);
+  padding:20px; background:var(--pale); border-radius:9px;
+  border-left:4px solid var(--blue);
 }
-.metric strong { display: block; font-size: 25px; color: var(--navy); }
-.metric span { font-size: 13px; color: var(--muted); }
-figure { margin: 18px 0; }
-figure img, .visual {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  border: 1px solid #e0e7ef;
-}
-.caption { font-size: 13px; color: var(--muted); margin-top: 8px; }
-.placeholder {
-  background: #f3f6fa;
-  border: 1px dashed #9cabbc;
-  padding: 24px;
-  border-radius: 8px;
-  color: #52657b;
-}
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th, td { text-align: right; padding: 10px; border-bottom: 1px solid #e3e8ef; }
-th { background: var(--pale); color: var(--navy); }
-th:first-child, td:first-child { text-align: left; }
-.table-wrap { overflow-x: auto; }
-.note { font-size: 13px; color: var(--muted); }
-footer {
-  background: var(--navy);
-  color: white;
-  padding: 25px 8%;
-  font-size: 13px;
-}
-a { overflow-wrap: anywhere; }
+.metric strong { display:block; font-size:25px; color:var(--navy); }
+.metric span { font-size:13px; color:var(--muted); }
+figure { margin:18px 0; }
+figure img { display:block; width:100%; height:auto; border-radius:6px; border:1px solid #e0e7ef; }
+figcaption { font-size:13px; color:var(--muted); margin-top:8px; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th,td { text-align:right; padding:10px; border-bottom:1px solid #e3e8ef; }
+th { background:var(--pale); color:var(--navy); }
+th:first-child,td:first-child { text-align:left; }
+.table-wrap { overflow-x:auto; }
+.note { font-size:13px; color:var(--muted); }
+footer { background:var(--navy); color:white; padding:25px 8%; font-size:13px; }
+a { overflow-wrap:anywhere; }
 @media(max-width:600px) {
-  header { padding: 38px 6%; }
-  nav { position: static; padding: 12px 6%; }
-  nav a { display: inline-block; margin: 4px 12px 4px 0; }
-  section { padding: 20px; }
+  header { padding:38px 6%; }
+  nav { position:static; padding:12px 6%; }
+  nav a { display:inline-block; margin:4px 12px 4px 0; }
+  section { padding:20px; }
 }
 </style>
 </head>
@@ -134,58 +89,38 @@ a { overflow-wrap: anywhere; }
 <main>
 <section id="overview">
   <h2>Project overview</h2>
-  <p>This project examines the temporal variation of satellite-observed night-time radiance across the Agra ward-based study area between 2014 and 2024. Monthly VIIRS observations are aggregated into annual mean surfaces to visualise changes over time.</p>
-
+  <p>This project examines temporal variation in satellite-observed night-time radiance across the Agra ward-based study area between 2014 and 2024. Monthly VIIRS observations are aggregated into annual mean surfaces to visualise changes over time.</p>
   <div class="metrics">
-    <div class="metric">
-      <strong>2014–2024</strong>
-      <span>Analysis period</span>
-    </div>
-    <div class="metric">
-      <strong>11 years</strong>
-      <span>Annual observations</span>
-    </div>
-    <div class="metric">
-      <strong>−1.16%</strong>
-      <span>Change in mean radiance, 2014–2024</span>
-    </div>
-    <div class="metric">
-      <strong>2019</strong>
-      <span>Lowest annual mean in the series</span>
-    </div>
+    <div class="metric"><strong>2014–2024</strong><span>Analysis period</span></div>
+    <div class="metric"><strong>11 years</strong><span>Annual observations</span></div>
+    <div class="metric"><strong>−1.16%</strong><span>Change in mean radiance, 2014–2024</span></div>
+    <div class="metric"><strong>2019</strong><span>Lowest annual mean in the series</span></div>
   </div>
 </section>
 
 <section id="trend">
   <h2>Annual mean radiance trend</h2>
-  <p>The graph shows the annual spatial mean of VIIRS radiance within the study area.</p>
+  <p>The annual spatial mean of VIIRS radiance within the study area is summarised below. The annual map panel is shown here; upload a separate trend graph if available.</p>
   <figure>
-    <div class="placeholder">
-      <strong><img src="Agra_Annual_Radiance_Maps_2014_2024.png" alt="Annual VIIRS radiance maps of Agra, 2014–2024"></strong><br>
-      Upload your graph as <code>Agra_Mean_Radiance_Trend.png</code> to this repository, then replace this box with the image element described in the next steps.
-    </div>
+    <img src="Agra_Annual_Radiance_Maps_2014_2024.png" alt="Annual VIIRS night-time radiance maps of Agra from 2014 to 2024">
+    <figcaption>Annual VIIRS night-time radiance surfaces, 2014–2024. The colour scale represents radiance.</figcaption>
   </figure>
 </section>
 
 <section id="maps">
   <h2>Spatial analysis</h2>
-
-  <h3>Radiance change: 2024 minus 2014</h3>
-  <p>Red areas represent positive radiance change and blue areas represent negative change, according to the map's colour scale.</p>
+  <h3>Pixel-wise radiance trend, 2014–2024</h3>
+  <p>This map represents the pixel-wise trend in observed night-time radiance over the analysis period.</p>
   <figure>
-    <div class="placeholder">
-      <strong><img src="Agra_Pixel_Trend_2014_2024_Labelled.png" alt="Pixel-wise night-time radiance trend map of Agra, 2014–2024"></strong><br>
-      Upload the labelled change map and replace this placeholder in the HTML.
-    </div>
+    <img src="Agra_Pixel_Trend_2014_2024_Labelled.png" alt="Labelled pixel-wise night-time radiance trend map of Agra, 2014–2024">
+    <figcaption>Pixel-wise VIIRS radiance trend map, 2014–2024.</figcaption>
   </figure>
 
-  <h3><figure>   <img src="Agra_VIIRS_Radiance_2014_2024.gif" alt="Annual VIIRS night-time radiance animation of Agra, 2014–2024">   <figcaption class="caption">Annual VIIRS night-time radiance animation, 2014–2024.</figcaption> </figure></h3>
+  <h3>Annual radiance animation</h3>
   <p>The animation presents the annual variation in observed night-time radiance from 2014 to 2024.</p>
   <figure>
-    <div class="placeholder">
-      <strong><figure>   <img src="Agra_VIIRS_Radiance_2014_2024.gif"        alt="Annual VIIRS night-time radiance animation of Agra, 2014–2024"        style="width:100%; height:auto;">   <figcaption>Annual VIIRS night-time radiance animation, 2014–2024.</figcaption> </figure></strong><br>
-      Upload <code>Agra_VIIRS_Radiance_2014_2024.gif</code> and replace this placeholder in the HTML.
-    </div>
+    <img src="Agra_VIIRS_Radiance_2014_2024.gif" alt="Annual VIIRS night-time radiance animation of Agra, 2014–2024">
+    <figcaption>Annual VIIRS night-time radiance animation, 2014–2024.</figcaption>
   </figure>
 </section>
 
@@ -194,9 +129,7 @@ a { overflow-wrap: anywhere; }
   <p>Annual mean radiance and percentage change relative to 2014.</p>
   <div class="table-wrap">
   <table>
-    <thead>
-      <tr><th>Year</th><th>Mean radiance (nW/cm²/sr)</th><th>Change from 2014 (%)</th></tr>
-    </thead>
+    <thead><tr><th>Year</th><th>Mean radiance (nW/cm²/sr)</th><th>Change from 2014 (%)</th></tr></thead>
     <tbody>
       <tr><td>2014</td><td>24.7379</td><td>0.00</td></tr>
       <tr><td>2015</td><td>24.9655</td><td>0.92</td></tr>
@@ -217,15 +150,13 @@ a { overflow-wrap: anywhere; }
 
 <section id="method">
   <h2>Data and methodology</h2>
-  <p><strong>Satellite data:</strong> NOAA VIIRS Day/Night Band monthly radiance collection, available in Google Earth Engine as <code>NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG</code>, using the <code>avg_rad</code> band.</p>
-  <p><strong>Processing:</strong> Monthly observations were grouped by calendar year and averaged to generate annual mean radiance surfaces for 2014–2024. The annual images were clipped to the ward-based Agra study area. Spatial mean radiance was calculated for each year, and the 2024 surface was compared with the 2014 surface.</p>
-
+  <p><strong>Satellite data:</strong> NOAA VIIRS Day/Night Band monthly radiance collection in Google Earth Engine: <code>NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG</code>, using the <code>avg_rad</code> band.</p>
+  <p><strong>Processing:</strong> Monthly observations were grouped by calendar year and averaged to generate annual mean radiance surfaces for 2014–2024. Annual images were clipped to the ward-based Agra study area. Spatial mean radiance was calculated for each year.</p>
   <h2>Results and discussion</h2>
   <p>Mean radiance declined from 24.7379 nW/cm²/sr in 2014 to a minimum of 20.6445 nW/cm²/sr in 2019. It then fluctuated and increased during 2023–2024. The 2024 mean was 24.4505 nW/cm²/sr, approximately 1.16% below the 2014 value.</p>
-  <p>The change map indicates spatially varied increases and decreases in observed night-time radiance. These patterns are not uniform across the study area. Radiance alone cannot identify the cause of a change or serve as a direct measure of population or economic activity.</p>
-
+  <p>The pixel-wise trend map and annual animation help illustrate spatial and temporal variation. Radiance alone cannot identify the cause of a change or serve as a direct measure of population or economic activity.</p>
   <h2>Limitations</h2>
-  <p>The study uses the available ward-boundary dataset as its spatial extent; it should not be interpreted as an independently verified municipal boundary. VIIRS radiance is a satellite-derived indicator affected by spatial resolution, lighting conditions, and data quality. The findings describe observed radiance patterns and do not establish causation.</p>
+  <p>The study uses the available ward-boundary dataset as its spatial extent; it should not be interpreted as an independently verified municipal boundary. VIIRS radiance is affected by spatial resolution, lighting conditions and data quality. The findings describe observed radiance patterns and do not establish causation.</p>
 </section>
 
 <section>
@@ -239,6 +170,6 @@ a { overflow-wrap: anywhere; }
   <p>Agra Night-time Radiance Analysis | 2014–2024</p>
   <p>Created for HS524M Urban Informatics and Spatial Analytics.</p>
 </footer>
-
 </body>
 </html>
+```
